@@ -34,12 +34,28 @@
       text-align: center;
     }
 
+    .menu {
+      bottom: 50px;
+      right: 0;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      position: fixed;
+      text-align: center;
+      width: 100px;
+    }
+
     .button {
       background-color: transparent;
       border: none;
+      border-radius: 50px;
       cursor: pointer;
       width: 50px;
       height: 60px;
+    }
+
+    .button__up {
+      display: none;
     }
 
     .button__arrow {
@@ -64,17 +80,6 @@
       grid-template-columns: repeat(6, 1fr);
       justify-content: center;
       padding: 0 100px;
-    }
-
-    .menu {
-      bottom: 30px;
-      right: 0;
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      position: fixed;
-      text-align: center;
-      width: 100px;
     }
 
     .card {
@@ -257,56 +262,19 @@
         width: 60px;
         height: 60px;
         border-radius: 50px;
-        transition: border-radius 0.3s ease;
-      }
-
-      .button__up, .button__down {
-        width: 50px;
-        padding: 12px;
-      }
-
-      .button__up {
-        border-radius: 50px 50px 0 0;
-      }
-
-      .button__down {
-        border-radius: 0 0 50px 50px;
-      }
-
-      /* Скрытие кнопки вверх при нахождении наверху страницы */
-      .button__up:empty {
-        display: none;
-      }
-
-      /* Скрытие кнопки вниз при нахождении внизу страницы */
-      .button__down:empty {
-        display: none;
-      }
-
-      /* Если одна из кнопок скрыта, другая становится круглой */
-      .button__up:empty ~ .button__down {
-        border-radius: 50px;
-      }
-
-      .button__down:empty ~ .button__up {
-        border-radius: 50px;
-      }
-      /* .button {
-        background-color: #121212bd;
-        border-radius: 50px;
-        width: 60px;
+        transition: border-radius 0.2s ease;
       }
       .button__up {
+        display: none;
         width: 50px;
         padding: 12px;
-        border-radius: 50px 50px 0 0;
+        border-radius: 50px;
       }
-
       .button__down {
         width: 50px;
         padding: 12px;
-        border-radius: 0 0 50px 50px;
-      } */
+        border-radius: 50px;
+      }
       .colours {
         grid-template-columns: 1fr;
         padding: 15px;
@@ -2663,10 +2631,6 @@
           goUpButton.style.borderRadius = "50px 50px 0 0";
         }
       });
-
-      // Initial state for buttons
-      goUpButton.style.display = "none"; // Hide "Go up" on initial load
-      goDownButton.style.borderRadius = "50px";
 
       // Opening pop-up
       colorCards.forEach(card => {
