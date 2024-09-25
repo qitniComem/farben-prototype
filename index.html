@@ -2615,7 +2615,7 @@
         const pageHeight = document.body.scrollHeight;
         const windowHeight = window.innerHeight;
 
-        if (scrollPosition === 0) {
+        if (scrollPosition <= windowHeight / 2) {
           goUpButton.style.display = "none";
           goDownButton.style.borderRadius = "50px";
         } else {
@@ -2623,7 +2623,7 @@
           goDownButton.style.borderRadius = "0 0 50px 50px";
         }
 
-        if (scrollPosition + windowHeight >= pageHeight) {
+        if (scrollPosition + windowHeight * 2 >= pageHeight) {
           goDownButton.style.display = "none";
           goUpButton.style.borderRadius = "50px";
         } else {
